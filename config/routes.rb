@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/frogs/:id/destroy', to: 'frogs#destroy'
   get '/tadpoles/:id/destroy', to: 'tadpoles#destroy'
 
+  post '/tadpoles/:id/metamorphose', to: 'tadpoles#metamorphose', as: 'metamorphose'
   # code your post to  '/tadpoles/:id/metamorphose' here
   # it should direct to the tadpoles controller, the metamorphose action
 
@@ -20,5 +21,5 @@ Rails.application.routes.draw do
   resources :frogs do
     resources :tadpoles, :only => [:new]
   end
-
+  
 end
